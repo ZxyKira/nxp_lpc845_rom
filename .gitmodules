@@ -1,0 +1,16 @@
+[submodule "reference/nxp_lpc845_driver"]
+	path = reference/nxp_lpc845_driver
+	url = https://github.com/ZxyKira/nxp_lpc845_driver.git
+	branch = release
+[submodule "reference/mcu_framework"]
+	path = reference/mcu_framework
+	url = https://github.com/ZxyKira/mcu_framework.git
+	branch = release
+[submodule "reference/mcu_framework_lpc845"]
+	path = reference/mcu_framework_lpc845
+	url = https://github.com/ZxyKira/mcu_framework_lpc845.git
+	branch = release
+[submodule "reference/terminal"]
+	path = reference/terminal
+	url = https://github.com/ZxyKira/terminal.git
+	branch = release
