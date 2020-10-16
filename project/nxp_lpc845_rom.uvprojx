@@ -80,9 +80,9 @@
             <nStopB2X>0</nStopB2X>
           </BeforeMake>
           <AfterMake>
-            <RunUserProg1>0</RunUserProg1>
+            <RunUserProg1>1</RunUserProg1>
             <RunUserProg2>0</RunUserProg2>
-            <UserProg1Name></UserProg1Name>
+            <UserProg1Name>fromelf --bincombined --bincombined_base=0x00008000 -o "$L@L.bin" "#L"</UserProg1Name>
             <UserProg2Name></UserProg2Name>
             <UserProg1Dos16Mode>0</UserProg1Dos16Mode>
             <UserProg2Dos16Mode>0</UserProg2Dos16Mode>
@@ -338,7 +338,7 @@
               <MiscControls>--diag_suppress 1296</MiscControls>
               <Define>CPU_LPC845M301JBD64</Define>
               <Undefine></Undefine>
-              <IncludePath>..\source\chip;..\source\config;..\source\main;..\source\method;..\reference\mcu_framework;..\reference\mcu_framework_lpc845;..\reference\nxp_lpc845_driver</IncludePath>
+              <IncludePath>..\source\chip;..\source\config;..\source\main;..\source\method;..\reference\mcu_framework;..\reference\mcu_framework_lpc845;..\reference\nxp_lpc845_driver;..\debug</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -431,6 +431,36 @@
               <FileName>terminal.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\source\method\terminal.c</FilePath>
+            </File>
+            <File>
+              <FileName>bootloader.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\source\method\bootloader.c</FilePath>
+            </File>
+            <File>
+              <FileName>timer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\source\method\timer.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>command</GroupName>
+          <Files>
+            <File>
+              <FileName>command_info.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\source\command\command_info.c</FilePath>
+            </File>
+            <File>
+              <FileName>command_led.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\source\command\command_led.c</FilePath>
+            </File>
+            <File>
+              <FileName>command_reboot.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\source\command\command_reboot.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -706,6 +736,26 @@
               <FileName>LPC845_features.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\reference\nxp_lpc845_driver\LPC845_features.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>debug</GroupName>
+          <Files>
+            <File>
+              <FileName>terminal.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\debug\terminal.c</FilePath>
+            </File>
+            <File>
+              <FileName>terminal.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\debug\terminal.h</FilePath>
+            </File>
+            <File>
+              <FileName>terminal_entity.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\debug\terminal_entity.h</FilePath>
             </File>
           </Files>
         </Group>

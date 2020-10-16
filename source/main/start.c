@@ -16,7 +16,8 @@
  *    Extern Function/Variable
  */
 extern void periph_io_startup(void);
-
+extern void timer_init(void);
+extern void terminal_init0(void);
 /*-----------------------------------------------------------------------------------------
  *    Local Type/Structure
  */
@@ -48,6 +49,8 @@ void start(){
 	start_hw();
 	
 	periph_io_startup();
+	timer_init();
+	terminal_init0();
 }
 
 /*****************************************************************************

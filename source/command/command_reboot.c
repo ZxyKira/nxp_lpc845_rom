@@ -1,14 +1,12 @@
 /*-----------------------------------------------------------------------------------------
- *    File Name   :periph_io.c
+ *    File Name   :command_reboot.c
  *    Version     :V1.0.0
- *    Create Date :2020-10-13
- *    Modufy Date :2020-10-13
- *    Information :
+ *    Create Date :2020-10-15
+ *    Modufy Date :2020-10-15
+ *    rebootrmation :
  */
-#include <stdint.h>
+#include "terminal_entity.h"
 #include <string.h>
-
-#include "fw_chip.h"
 
 /*-----------------------------------------------------------------------------------------
  *    Parameter
@@ -17,7 +15,7 @@
 /*-----------------------------------------------------------------------------------------
  *    Extern Function/Variable
  */
-
+extern void BootJump(uint32_t *Address);
 /*-----------------------------------------------------------------------------------------
  *    Local Type/Structure
  */
@@ -25,42 +23,62 @@
 /*-----------------------------------------------------------------------------------------
  *    Local Variable
  */
- 
+const char command_reboot_text_cmd[] = "reboot";
 /*-----------------------------------------------------------------------------------------
  *    Variable
  */
-fw_io_entity_t LED[8];
-fw_io_entity_t BTN;
 
 /*-----------------------------------------------------------------------------------------
  *    Inline Function
  */
-
+ 
 /*-----------------------------------------------------------------------------------------
  *    Local Function
  */
-static void periph_io_init(void){
-	int i;
+static void command_reboot_bootloader(terminal_xfer_api_t *pApi){
+	pApi->sendString("reboot to bootloader");
+	pApi->putCh('\n');
+	BootJump((uint32_t*)0x00000000);
+} 
+
+static void command_reboot_rom(terminal_xfer_api_t *pApi){
+	pApi->sendString("reboot to rom");
+	pApi->putCh('\n');
+	BootJump((uint32_t*)0x00008000);
+} 
+
+static bool command_reboot_handle(terminal_xfer_api_t *pApi, void* userData, int argc, char **argv){
+	if(argc == 1)
+		command_reboot_bootloader(pApi);
 	
-	for(i=0; i<8; i++){
-		
-		/* Get io PIO1_i profile to LED[i] */
-		LED[i] = fw_io_api.getEntity(0, 1, i);
-		fw_io_entity_api.setOutput(LED[i]);
-
-		fw_io_entity_api.setLow(LED[i]);
-		/* Set io to low */
+	else{
+		if(strcmp(argv[1], "bootloader") == 0)
+			command_reboot_bootloader(pApi);
+		else if(strcmp(argv[1], "rom") == 0)
+			command_reboot_rom(pApi);
+		else{
+			pApi->sendString("unknown param :");
+			pApi->sendString(argv[1]);
+		}
+			
 	}
-
+		
+	return true;
 }
- 
+
 /*-----------------------------------------------------------------------------------------
  *    Public Function
  */
-void periph_io_startup(){
-	periph_io_init();
+terminal_command_t command_reboot_getCommand(){
+	terminal_command_t command = {
+		.command = command_reboot_text_cmd,
+		.userData = (void*)0x00000000,
+		.handle = command_reboot_handle,
+	};	
+	return command;
 }
 
 /*-----------------------------------------------------------------------------------------
  *    End of file
  */
+

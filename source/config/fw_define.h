@@ -47,6 +47,18 @@
 #define FW_DEFINE_USART0_ENABLE 1
 #endif
 
+//   <e> RingBuffer
+//   <i> Enables IO0.
+#ifndef FW_DEFINE_USART0_RINGBUFFER_ENABLE
+#define FW_DEFINE_USART0_RINGBUFFER_ENABLE 1
+#endif
+
+//   <o>Size [byte] <32-8192>
+#ifndef FW_DEFINE_USART0_RINGBUFFER_SIZE
+#define FW_DEFINE_USART0_RINGBUFFER_SIZE 1024
+#endif
+//   </e>
+
 //   <o>Hardware Base Address <0x0-0xFFFFFFFF>
 #ifndef FW_DEFINE_USART0_BASE
 #define FW_DEFINE_USART0_BASE (void*) 0x40064000
@@ -128,6 +140,18 @@
 #define FW_DEFINE_USART1_ENABLE 0
 #endif
 
+//   <e> RingBuffer
+//   <i> Enables IO0.
+#ifndef FW_DEFINE_USART1_RINGBUFFER_ENABLE
+#define FW_DEFINE_USART1_RINGBUFFER_ENABLE 0
+#endif
+
+//   <o>Size [byte] <32-8192>
+#ifndef FW_DEFINE_USART1_RINGBUFFER_SIZE
+#define FW_DEFINE_USART1_RINGBUFFER_SIZE 256
+#endif
+//   </e>
+
 //   <o>Hardware Base Address <0x0-0xFFFFFFFF>
 #ifndef FW_DEFINE_USART1_BASE
 #define FW_DEFINE_USART1_BASE (void*) 0x40068000
@@ -150,7 +174,7 @@
 // <40=> P1_8  <41=> P1_9  <42=> P1_10 <43=> P1_11 <44=> P1_12 <45=> P1_13 <46=> P1_14 <47=> P1_15
 // <48=> P1_16 <49=> P1_17 <50=> P1_18 <51=> P1_19 <52=> P1_20 <53=> P1_21 <255=> Not used
 #ifndef FW_DEFINE_USART1_TXD
-#define FW_DEFINE_USART1_TXD 255
+#define FW_DEFINE_USART1_TXD 41
 #endif
 
 // <o>RXD
@@ -209,6 +233,18 @@
 #define FW_DEFINE_USART2_ENABLE 0
 #endif
 
+//   <e> RingBuffer
+//   <i> Enables IO0.
+#ifndef FW_DEFINE_USART2_RINGBUFFER_ENABLE
+#define FW_DEFINE_USART2_RINGBUFFER_ENABLE 0
+#endif
+
+//   <o>Size [byte] <32-8192>
+#ifndef FW_DEFINE_USART2_RINGBUFFER_SIZE
+#define FW_DEFINE_USART2_RINGBUFFER_SIZE 256
+#endif
+//   </e>
+
 //   <o>Hardware Base Address <0x0-0xFFFFFFFF>
 #ifndef FW_DEFINE_USART2_BASE
 #define FW_DEFINE_USART2_BASE (void*) 0x4006C000
@@ -231,7 +267,7 @@
 // <40=> P1_8  <41=> P1_9  <42=> P1_10 <43=> P1_11 <44=> P1_12 <45=> P1_13 <46=> P1_14 <47=> P1_15
 // <48=> P1_16 <49=> P1_17 <50=> P1_18 <51=> P1_19 <52=> P1_20 <53=> P1_21 <255=> Not used
 #ifndef FW_DEFINE_USART2_TXD
-#define FW_DEFINE_USART2_TXD 255
+#define FW_DEFINE_USART2_TXD 42
 #endif
 
 // <o>RXD
@@ -290,6 +326,18 @@
 #define FW_DEFINE_USART3_ENABLE 0
 #endif
 
+//   <e> RingBuffer
+//   <i> Enables IO0.
+#ifndef FW_DEFINE_USART3_RINGBUFFER_ENABLE
+#define FW_DEFINE_USART3_RINGBUFFER_ENABLE 0
+#endif
+
+//   <o>Size [byte] <32-8192>
+#ifndef FW_DEFINE_USART3_RINGBUFFER_SIZE
+#define FW_DEFINE_USART3_RINGBUFFER_SIZE 256
+#endif
+//   </e>
+
 //   <o>Hardware Base Address <0x0-0xFFFFFFFF>
 #ifndef FW_DEFINE_USART3_BASE
 #define FW_DEFINE_USART3_BASE (void*) 0x40070000
@@ -312,7 +360,7 @@
 // <40=> P1_8  <41=> P1_9  <42=> P1_10 <43=> P1_11 <44=> P1_12 <45=> P1_13 <46=> P1_14 <47=> P1_15
 // <48=> P1_16 <49=> P1_17 <50=> P1_18 <51=> P1_19 <52=> P1_20 <53=> P1_21 <255=> Not used
 #ifndef FW_DEFINE_USART3_TXD
-#define FW_DEFINE_USART3_TXD 255
+#define FW_DEFINE_USART3_TXD 43
 #endif
 
 // <o>RXD
@@ -359,6 +407,18 @@
 #define FW_DEFINE_USART4_ENABLE 0
 #endif
 
+//   <e> RingBuffer
+//   <i> Enables IO0.
+#ifndef FW_DEFINE_USART4_RINGBUFFER_ENABLE
+#define FW_DEFINE_USART4_RINGBUFFER_ENABLE 0
+#endif
+
+//   <o>Size [byte] <32-8192>
+#ifndef FW_DEFINE_USART4_RINGBUFFER_SIZE
+#define FW_DEFINE_USART4_RINGBUFFER_SIZE 256
+#endif
+//   </e>
+
 //   <o>Hardware Base Address <0x0-0xFFFFFFFF>
 #ifndef FW_DEFINE_USART4_BASE
 #define FW_DEFINE_USART4_BASE (void*) 0x40074000
@@ -381,7 +441,7 @@
 // <40=> P1_8  <41=> P1_9  <42=> P1_10 <43=> P1_11 <44=> P1_12 <45=> P1_13 <46=> P1_14 <47=> P1_15
 // <48=> P1_16 <49=> P1_17 <50=> P1_18 <51=> P1_19 <52=> P1_20 <53=> P1_21 <255=> Not used
 #ifndef FW_DEFINE_USART4_TXD
-#define FW_DEFINE_USART4_TXD 255
+#define FW_DEFINE_USART4_TXD 44
 #endif
 
 // <o>RXD
@@ -452,7 +512,7 @@
 // <40=> P1_8  <41=> P1_9  <42=> P1_10 <43=> P1_11 <44=> P1_12 <45=> P1_13 <46=> P1_14 <47=> P1_15
 // <48=> P1_16 <49=> P1_17 <50=> P1_18 <51=> P1_19 <52=> P1_20 <53=> P1_21 <255=> Not used
 #ifndef FW_DEFINE_SPI0_SCK
-#define FW_DEFINE_SPI0_SCK 255
+#define FW_DEFINE_SPI0_SCK 40
 #endif
 
 // <o>MOSI 
@@ -464,7 +524,7 @@
 // <40=> P1_8  <41=> P1_9  <42=> P1_10 <43=> P1_11 <44=> P1_12 <45=> P1_13 <46=> P1_14 <47=> P1_15
 // <48=> P1_16 <49=> P1_17 <50=> P1_18 <51=> P1_19 <52=> P1_20 <53=> P1_21 <255=> Not used
 #ifndef FW_DEFINE_SPI0_MOSI
-#define FW_DEFINE_SPI0_MOSI 255
+#define FW_DEFINE_SPI0_MOSI 41
 #endif
 
 // <o>MISO 
@@ -476,7 +536,7 @@
 // <40=> P1_8  <41=> P1_9  <42=> P1_10 <43=> P1_11 <44=> P1_12 <45=> P1_13 <46=> P1_14 <47=> P1_15
 // <48=> P1_16 <49=> P1_17 <50=> P1_18 <51=> P1_19 <52=> P1_20 <53=> P1_21 <255=> Not used
 #ifndef FW_DEFINE_SPI0_MISO
-#define FW_DEFINE_SPI0_MISO 255
+#define FW_DEFINE_SPI0_MISO 42
 #endif
 
 // <h>SSEL
@@ -491,7 +551,7 @@
 // <40=> P1_8  <41=> P1_9  <42=> P1_10 <43=> P1_11 <44=> P1_12 <45=> P1_13 <46=> P1_14 <47=> P1_15
 // <48=> P1_16 <49=> P1_17 <50=> P1_18 <51=> P1_19 <52=> P1_20 <53=> P1_21 <255=> Not used
 #ifndef FW_DEFINE_SPI0_SSEL0
-#define FW_DEFINE_SPI0_SSEL0 255
+#define FW_DEFINE_SPI0_SSEL0 43
 #endif
 
 // <o>SSEL1
@@ -503,7 +563,7 @@
 // <40=> P1_8  <41=> P1_9  <42=> P1_10 <43=> P1_11 <44=> P1_12 <45=> P1_13 <46=> P1_14 <47=> P1_15
 // <48=> P1_16 <49=> P1_17 <50=> P1_18 <51=> P1_19 <52=> P1_20 <53=> P1_21 <255=> Not used
 #ifndef FW_DEFINE_SPI0_SSEL1
-#define FW_DEFINE_SPI0_SSEL1 255
+#define FW_DEFINE_SPI0_SSEL1 44
 #endif
 
 // <o>SSEL2 
@@ -515,7 +575,7 @@
 // <40=> P1_8  <41=> P1_9  <42=> P1_10 <43=> P1_11 <44=> P1_12 <45=> P1_13 <46=> P1_14 <47=> P1_15
 // <48=> P1_16 <49=> P1_17 <50=> P1_18 <51=> P1_19 <52=> P1_20 <53=> P1_21 <255=> Not used
 #ifndef FW_DEFINE_SPI0_SSEL2
-#define FW_DEFINE_SPI0_SSEL2 255
+#define FW_DEFINE_SPI0_SSEL2 45
 #endif
 
 // <o>SSEL3
@@ -527,7 +587,7 @@
 // <40=> P1_8  <41=> P1_9  <42=> P1_10 <43=> P1_11 <44=> P1_12 <45=> P1_13 <46=> P1_14 <47=> P1_15
 // <48=> P1_16 <49=> P1_17 <50=> P1_18 <51=> P1_19 <52=> P1_20 <53=> P1_21 <255=> Not used
 #ifndef FW_DEFINE_SPI0_SSEL3
-#define FW_DEFINE_SPI0_SSEL3 255
+#define FW_DEFINE_SPI0_SSEL3 46
 #endif
 
 // <o>SSEL4
@@ -539,7 +599,7 @@
 // <40=> P1_8  <41=> P1_9  <42=> P1_10 <43=> P1_11 <44=> P1_12 <45=> P1_13 <46=> P1_14 <47=> P1_15
 // <48=> P1_16 <49=> P1_17 <50=> P1_18 <51=> P1_19 <52=> P1_20 <53=> P1_21 <255=> Not used
 #ifndef FW_DEFINE_SPI0_SSEL4
-#define FW_DEFINE_SPI0_SSEL4 255
+#define FW_DEFINE_SPI0_SSEL4 47
 #endif
 
 // <o>SSEL5
@@ -551,7 +611,7 @@
 // <40=> P1_8  <41=> P1_9  <42=> P1_10 <43=> P1_11 <44=> P1_12 <45=> P1_13 <46=> P1_14 <47=> P1_15
 // <48=> P1_16 <49=> P1_17 <50=> P1_18 <51=> P1_19 <52=> P1_20 <53=> P1_21 <255=> Not used
 #ifndef FW_DEFINE_SPI0_SSEL5
-#define FW_DEFINE_SPI0_SSEL5 255
+#define FW_DEFINE_SPI0_SSEL5 48
 #endif
 
 // <o>SSEL6
@@ -563,7 +623,7 @@
 // <40=> P1_8  <41=> P1_9  <42=> P1_10 <43=> P1_11 <44=> P1_12 <45=> P1_13 <46=> P1_14 <47=> P1_15
 // <48=> P1_16 <49=> P1_17 <50=> P1_18 <51=> P1_19 <52=> P1_20 <53=> P1_21 <255=> Not used
 #ifndef FW_DEFINE_SPI0_SSEL6
-#define FW_DEFINE_SPI0_SSEL6 255
+#define FW_DEFINE_SPI0_SSEL6 49
 #endif
 
 // <o>SSEL7
@@ -575,7 +635,7 @@
 // <40=> P1_8  <41=> P1_9  <42=> P1_10 <43=> P1_11 <44=> P1_12 <45=> P1_13 <46=> P1_14 <47=> P1_15
 // <48=> P1_16 <49=> P1_17 <50=> P1_18 <51=> P1_19 <52=> P1_20 <53=> P1_21 <255=> Not used
 #ifndef FW_DEFINE_SPI0_SSEL7
-#define FW_DEFINE_SPI0_SSEL7 255
+#define FW_DEFINE_SPI0_SSEL7 50
 #endif
 // </h>
 //   </e>
@@ -882,4 +942,3 @@
 /*-----------------------------------------------------------------------------------------
  *	End of file
  */
- 

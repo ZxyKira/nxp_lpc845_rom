@@ -27,6 +27,7 @@ extern fw_spim_base_t FW_SPI0;
 extern fw_spim_xfer_t FW_SPI0_XFER;
 extern void terminal_write(void* str, uint32_t len);
 extern char terminal_cache[256];
+extern void terminal_start0(void);
 /*-----------------------------------------------------------------------------------------
  *    Local Type/Structure
  */
@@ -54,16 +55,7 @@ void delay(uint32_t us){
 }
 
 void loop(){
-	int i;
-	LOGOUT("Start ROM\n");
-	while(1){
-		for(i=0; i<8; i++){
-			fw_io_entity_api.setHigh(LED[i]);
-			delay(1000000);
-			fw_io_entity_api.setLow(LED[i]);
-			delay(1000000);
-		}
-	}
+	terminal_start0();
 }
 /*-----------------------------------------------------------------------------------------
  *    End of file
